@@ -18,7 +18,9 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle/caches
-          key: v1-dependencies-{{ checksum "build.gradle" }}
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            - v1-dependencies-
       - run:
           name: Assemble JAR
           command: gradle assemble
