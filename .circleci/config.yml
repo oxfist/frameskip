@@ -13,15 +13,12 @@ jobs:
             - v1-dependencies-{{ checksum "build.gradle" }}
             - v1-dependencies-
       - run:
-          name: Get dependencies
-          command: gradle dependencies
+          name: Run tests
+          command: gradle test
       - save_cache:
           paths:
             - ~/.gradle/caches
           key: v1-gradle-cache-{{ checksum "build.gradle" }}
-      - run:
-          name: Run tests
-          command: gradle test
       - run:
           name: Assemble JAR
           command: gradle assemble
