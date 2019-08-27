@@ -2,7 +2,7 @@
 
 ## TODO
 - [X] Gradle Wrapper
-- [ ] Running instructions in README
+- [X] Running instructions in README
 - [ ] Endpoint
 - [ ] Deploy to GCP in pipeline
 - [ ] Checkstyle
@@ -15,3 +15,9 @@
 - [ ] PostgreSQL in dev
 - [ ] PostgreSQL on GCP
 - [ ] Kubernetes
+
+## Run project
+Run project locally with Gradle by executing `./gradlew bootRun`.
+
+## Run tests
+Run tests by executing `./gradlew test`.
