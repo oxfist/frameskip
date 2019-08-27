@@ -1,6 +1,7 @@
 # Frameskip
 
 ## TODO
+- [ ] Running instructions in README
 - [ ] Endpoint
 - [ ] Deploy to GCP in pipeline
 - [ ] Checkstyle
