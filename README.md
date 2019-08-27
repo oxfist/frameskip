@@ -1,5 +1,11 @@
 # Frameskip
 
+## Run project
+Run project locally with Gradle by executing `./gradlew bootRun`.
+
+## Run tests
+Run tests by executing `./gradlew test`.
+
 ## TODO
 - [X] Gradle Wrapper
 - [X] Running instructions in README
@@ -15,9 +21,3 @@
 - [ ] PostgreSQL in dev
 - [ ] PostgreSQL on GCP
 - [ ] Kubernetes
-
-## Run project
-Run project locally with Gradle by executing `./gradlew bootRun`.
-
-## Run tests
-Run tests by executing `./gradlew test`.
