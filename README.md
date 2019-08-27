@@ -1,6 +1,7 @@
 # Frameskip
 
 ## TODO
+- [X] Gradle Wrapper
 - [ ] Running instructions in README
 - [ ] Endpoint
 - [ ] Deploy to GCP in pipeline
