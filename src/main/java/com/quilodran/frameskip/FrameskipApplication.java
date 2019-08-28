@@ -7,6 +7,5 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FrameskipApplication {
     public static void main(String[] args) {
         SpringApplication.run(FrameskipApplication.class, args);
-        System.out.println("Hello, Frameskip!");
     }
 }

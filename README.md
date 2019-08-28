@@ -10,7 +10,7 @@ Run tests by executing `./gradlew test`.
 ## TODO
 - [X] Gradle Wrapper
 - [X] Running instructions in README
-- [ ] Endpoint
+- [X] Endpoint
 - [ ] Deploy to GCP in pipeline
 - [ ] Checkstyle
 - [ ] PMD
