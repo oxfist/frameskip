@@ -5,7 +5,8 @@ jobs:
       _JAVA_OPTIONS: "-Xmx3g"
       GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
     docker:
-      - image: circleci/openjdk:8
+      - image: frameskip/ci-build:1.0
+    working_directory: /home/frameskip
     steps:
       - checkout
       - restore_cache:
@@ -22,6 +23,9 @@ jobs:
       - run:
           name: Assemble JAR
           command: gradle assemble
+      - store_artifacts:
+          path: build/libs/frameskip-1.0-SNAPSHOT.jar
+          destination: frameskip-1.0-SNAPSHOT.jar
 workflows:
   version: 2
   build:
