@@ -29,8 +29,6 @@ jobs:
     docker:
       - image: frameskip/ci-build:1.0
     steps:
-      - run: echo $CIRCLE_PREVIOUS_BUILD_NUM
-      - run: echo $CIRCLE_TOKEN
       - run:
           name: Download artifact
           command: curl "https://circleci.com/api/v1.1/project/github/oxfist/frameskip/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts?circle-token=$CIRCLE_TOKEN" | grep -o 'https://[^"]*' | xargs wget
