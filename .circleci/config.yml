@@ -6,7 +6,6 @@ jobs:
       GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
     docker:
       - image: circleci/openjdk:8
-    working_directory: /home/frameskip
     steps:
       - checkout
       - restore_cache:
