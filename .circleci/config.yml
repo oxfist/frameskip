@@ -29,7 +29,7 @@ jobs:
     docker:
       - image: frameskip/ci-build:1.0
     steps:
-      - run: curl https://circleci.com/api/v1.1/project/github/oxfist/frameskip/$build_number/artifacts?circle-token=$CIRCLE_TOKEN \
+      - run: curl https://circleci.com/api/v1.1/project/github/oxfist/frameskip/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts?circle-token=$CIRCLE_TOKEN \
                | grep -o 'https://[^"]*' \
                | sed -e "s/$/?circle-token=$CIRCLE_TOKEN/" \
                | wget -v -i -
