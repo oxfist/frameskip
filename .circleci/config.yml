@@ -28,7 +28,10 @@ jobs:
   deploy:
     docker:
       - image: frameskip/ci-build:1.0
+        environment:
+          CIRCLE_PREVIOUS_BUILD_NUM=$CIRCLE_PREVIOUS_BUILD_NUM
     steps:
+      - run: echo $CIRCLE_PREVIOUS_BUILD_NUM
       - run: curl https://circleci.com/api/v1.1/project/github/oxfist/frameskip/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts?circle-token=$CIRCLE_TOKEN \
                | grep -o 'https://[^"]*' \
                | sed -e "s/$/?circle-token=$CIRCLE_TOKEN/" \
