@@ -32,7 +32,7 @@ jobs:
             echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
       - run:
           name: Push Docker image to Google Container Registry
-          command: docker push gcr.io/frameskip/base-image
+          command: gcloud docker push gcr.io/frameskip/base-image
   deploy:
     docker:
       - image: frameskip/ci-build:3.0
