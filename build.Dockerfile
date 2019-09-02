@@ -5,7 +5,7 @@ ENV HOME /
 ARG CLOUD_SDK_VERSION=260.0.0
 ARG SHA256SUM=4a52db98684fcf013458d9a1c16652cfe7d955d1038bb9f0c89928e345f7a61b
 
-RUN apk add --no-cache --update curl python bash libstdc++ && rm -rf /var/cache/apk/*
+RUN apk add --no-cache --update bash curl docker python libstdc++ && rm -rf /var/cache/apk/*
 
 # Install gcloud CLI
 RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz
