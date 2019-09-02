@@ -25,7 +25,7 @@ jobs:
           command: gradle assemble
       - run:
           name: Build Frameskip Docker image
-          command: docker build --tag gcr.io/frameskip/base-image .
+          command: docker build --tag frameskip/base-image .
       - run:
           name: Authenticate gcloud
           command: |
@@ -33,7 +33,7 @@ jobs:
       - run: gcloud auth configure-docker
       - run:
           name: Push Docker image to Google Container Registry
-          command: docker push gcr.io/frameskip/base-image
+          command: docker push frameskip/base-image
   deploy:
     docker:
       - image: frameskip/ci-build:3.0
