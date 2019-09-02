@@ -5,7 +5,7 @@ jobs:
       _JAVA_OPTIONS: "-Xmx3g"
       GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
     docker:
-      - image: circleci/openjdk:8
+      - image: frameskip/ci-build:2.0
     steps:
       - checkout
       - setup_remote_docker
@@ -35,7 +35,7 @@ jobs:
           command: docker push gcr.io/frameskip/base-image
   deploy:
     docker:
-      - image: frameskip/ci-build:1.0
+      - image: frameskip/ci-build:2.0
     steps:
       - run: |
           echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
