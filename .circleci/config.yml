@@ -5,7 +5,7 @@ jobs:
       _JAVA_OPTIONS: "-Xmx3g"
       GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
     docker:
-      - image: frameskip/ci-build:1.0
+      - image: circleci/openjdk:8
     steps:
       - checkout
       - setup_remote_docker
