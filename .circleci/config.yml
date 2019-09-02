@@ -33,7 +33,7 @@ jobs:
       - run: gcloud auth configure-docker
       - run:
           name: Push Docker image to Google Container Registry
-          command: gcloud docker push gcr.io/frameskip/base-image
+          command: docker push gcr.io/frameskip/base-image
   deploy:
     docker:
       - image: frameskip/ci-build:3.0
