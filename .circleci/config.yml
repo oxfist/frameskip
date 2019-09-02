@@ -30,6 +30,7 @@ jobs:
           name: Authenticate gcloud
           command: |
             echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+      - run: gcloud auth configure-docker
       - run:
           name: Push Docker image to Google Container Registry
           command: gcloud docker push gcr.io/frameskip/base-image
