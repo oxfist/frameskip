@@ -26,11 +26,10 @@ jobs:
       - run:
           name: Build Frameskip Docker image
           command: docker build --tag gcr.io/frameskip/base-image .
-      - run: echo ${GCLOUD_SERVICE_KEY} > ${HOME}/gcp-key.json
       - run:
-          name: Authenticate to Google Container Registry
+          name: Authenticate gcloud
           command: |
-            gcloud auth activate-service-account --key-file=${HOME}/gcp-key.json
+            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
       - run:
           name: Push Docker image to Google Container Registry
           command: docker push gcr.io/frameskip/base-image
