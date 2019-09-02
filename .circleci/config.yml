@@ -40,6 +40,9 @@ jobs:
     steps:
       - run: |
           echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+      - run:
+          name: Deploy container to Cloud Run
+          command: gcloud beta run deploy frameskip --image gcr.io/frameskip/base-image --platform managed --region us-east1 --allow-unauthenticated
 
 workflows:
   version: 2
