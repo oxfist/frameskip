@@ -17,6 +17,9 @@ RUN gcloud config set core/disable_usage_reporting true
 RUN gcloud config set component_manager/disable_update_check true
 VOLUME ["/.config"]
 
+# Install gcloud beta components
+RUN gcloud components install beta --quiet
+
 # Install Gradle 5.6.1
 RUN curl https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip > gradle.zip && \
     unzip gradle.zip && \

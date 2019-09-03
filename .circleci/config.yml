@@ -5,7 +5,7 @@ jobs:
       _JAVA_OPTIONS: "-Xmx3g"
       GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
     docker:
-      - image: frameskip/ci-build:3.0
+      - image: frameskip/ci-build:4.0
     steps:
       - checkout
       - setup_remote_docker
@@ -36,13 +36,13 @@ jobs:
           command: docker push gcr.io/frameskip/base-image
   deploy:
     docker:
-      - image: frameskip/ci-build:3.0
+      - image: frameskip/ci-build:4.0
     steps:
       - run: |
           echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
       - run:
           name: Deploy container to Cloud Run
-          command: gcloud beta run deploy frameskip --image gcr.io/frameskip/base-image --platform managed --region us-east1 --allow-unauthenticated
+          command: gcloud beta run deploy frameskip --image gcr.io/frameskip/base-image --project frameskip --platform managed --region us-east1 --allow-unauthenticated
 
 workflows:
   version: 2

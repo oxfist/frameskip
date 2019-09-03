@@ -1,1 +1,1 @@
-docker build -t frameskip/ci-build:1.0 -f build.Dockerfile .
+docker build -t frameskip/ci-build:4.0 -f build.Dockerfile .
