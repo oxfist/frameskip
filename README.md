@@ -11,7 +11,7 @@ Run tests by executing `./gradlew test`.
 - [X] Gradle Wrapper
 - [X] Running instructions in README
 - [X] Endpoint
-- [ ] Deploy to GCP in pipeline
+- [X] Deploy to GCP in pipeline
 - [ ] Checkstyle
 - [ ] PMD
 - [ ] Snyk
