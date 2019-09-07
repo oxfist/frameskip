@@ -24,7 +24,7 @@ class QuoteControllerTest {
     void should_return_solid_snake_quote() throws Exception {
         mvc.perform(get("/quote"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(content().json("{ \"quote\": \"Kept you waiting, huh?\" }"))
+                .andExpect(content().json("{ \"quote\": \"Do you think love can bloom, even on the battlefield?\" }"))
                 .andExpect(status().isOk());
     }
 }

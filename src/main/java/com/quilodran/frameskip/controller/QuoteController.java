@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class QuoteController {
     @GetMapping
     public String getQuote() {
-        return "{ \"quote\": \"Kept you waiting, huh?\" }";
+        return "{ \"quote\": \"Do you think love can bloom, even on the battlefield?\" }";
     }
 }
