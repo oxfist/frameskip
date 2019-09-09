@@ -4,6 +4,8 @@ plugins {
     id 'java'
 }
 
+apply plugin: "checkstyle"
+
 group 'com.quilodran'
 version '1.0-SNAPSHOT'
 
@@ -16,8 +18,8 @@ repositories {
 test {
     useJUnitPlatform()
     afterTest { desc, result ->
-		logger.quiet "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
-	}
+        logger.quiet "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
+    }
 }
 
 dependencies {
@@ -27,4 +29,9 @@ dependencies {
         exclude group: 'junit'
     }
     testImplementation 'org.junit.jupiter:junit-jupiter:5.5.1'
+}
+
+checkstyle {
+    toolVersion "8.24"
+    ignoreFailures false
 }

@@ -12,7 +12,7 @@ Run tests by executing `./gradlew test`.
 - [X] Running instructions in README
 - [X] Endpoint
 - [X] Deploy to GCP in pipeline
-- [ ] Checkstyle
+- [X] Checkstyle
 - [ ] PMD
 - [ ] Snyk
 - [ ] In-memory database

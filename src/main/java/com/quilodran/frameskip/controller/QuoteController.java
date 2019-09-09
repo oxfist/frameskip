@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/quote", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class QuoteController {
-    @GetMapping
-    public String getQuote() {
-        return "{ \"quote\": \"Do you think love can bloom, even on the battlefield?\" }";
-    }
+
+  @GetMapping
+  public String getQuote() {
+    return "{ \"quote\": \"Do you think love can bloom, even on the battlefield?\" }";
+  }
 }

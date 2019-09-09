@@ -34,6 +34,19 @@ jobs:
       - run:
           name: Push Docker image to Google Container Registry
           command: docker push gcr.io/frameskip/base-image
+
+  checkstyle-analysis:
+    environment:
+      _JAVA_OPTIONS: "-Xmx3g"
+      GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
+    docker:
+      - image: frameskip/ci-build:4.0
+    steps:
+      - checkout
+      - run:
+          name: "Run Checkstyle"
+          command: "gradle checkstyleMain checkstyleTest"
+
   deploy:
     docker:
       - image: frameskip/ci-build:4.0
@@ -49,6 +62,15 @@ workflows:
   build-deploy:
     jobs:
       - build
-      - deploy:
+      - checkstyle-analysis
+      - promote-to-prod:
+          type: approval
           requires:
             - build
+            - checkstyle-analysis
+          filters:
+            branches:
+              only: master
+      - deploy-to-prod:
+          requires:
+            - promote-to-prod
