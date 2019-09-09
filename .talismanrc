@@ -2,3 +2,6 @@ fileignoreconfig:
 - filename: build.Dockerfile
   checksum: a8472f1379cf21eae980f8ae93a924824a92d4397c0610dbc16c1f2be439d40b
   ignore_detectors: []
+- filename: README.md
+  checksum: 0390c45c40fcbdeaba893bf20ba229138f9aa8dd02159054d8eb4e6b5e366eb2
+  ignore_detectors: []

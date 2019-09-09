@@ -1,5 +1,5 @@
 # Frameskip
-[![CircleCI](https://circleci.com/gh/oxfist/frameskip.svg?style=svg)](https://circleci.com/gh/oxfist/frameskip)
+[![CircleCI](https://circleci.com/gh/oxfist/frameskip.svg?style=svg&circle-token=8b717676f0e81731bd605c1bc37eddb509c21c07)](https://circleci.com/gh/oxfist/frameskip)
 
 ## Run project
 Run project locally with Gradle by executing `./gradlew bootRun`.
