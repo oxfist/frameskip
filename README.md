@@ -7,12 +7,16 @@ Run project locally with Gradle by executing `./gradlew bootRun`.
 ## Run tests
 Run tests by executing `./gradlew test`.
 
+## Service account
+The service account configured for CI should have `Project Editor` permissions if deploying to GCP.
+
 ## TODO
 - [X] Gradle Wrapper
 - [X] Running instructions in README
 - [X] Endpoint
 - [X] Deploy to GCP in pipeline
 - [X] Checkstyle
+- [ ] CI monitoring
 - [ ] PMD
 - [ ] Snyk
 - [ ] In-memory database
