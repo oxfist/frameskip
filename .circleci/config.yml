@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 
 orbs:
   sumologic: circleci/sumologic@1.0.0
