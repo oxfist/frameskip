@@ -4,6 +4,7 @@ orbs:
   sumologic: circleci/sumologic@1.0.0
 
 workflows:
+  version: 2
   build-deploy:
     jobs:
       - build
