@@ -14,7 +14,6 @@ workflows:
           requires:
             - build
             - checkstyle-analysis
-            - sumologic/workflow-collector
           filters:
             branches:
               only: master
