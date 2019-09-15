@@ -9,17 +9,13 @@ workflows:
       - sumologic/workflow-collector
       - build
       - checkstyle-analysis
-      - promote-to-prod:
-          type: approval
+      - deploy-to-prod:
           requires:
             - build
             - checkstyle-analysis
           filters:
             branches:
               only: master
-      - deploy-to-prod:
-          requires:
-            - promote-to-prod
 
 jobs:
   build:
