@@ -6,7 +6,6 @@ orbs:
 workflows:
   build-deploy:
     jobs:
-      - sumologic/workflow-collector
       - build
       - checkstyle-analysis
       - promote-to-prod:
@@ -17,6 +16,9 @@ workflows:
           filters:
             branches:
               only: master
+      - sumologic/workflow-collector:
+          requires:
+            - promote-to-prod
       - deploy-to-prod:
           requires:
             - promote-to-prod
