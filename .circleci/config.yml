@@ -1,4 +1,26 @@
-version: 2
+version: 2.1
+
+orbs:
+  sumologic: circleci/sumologic@1.0.0
+
+workflows:
+  build-deploy:
+    jobs:
+      - sumologic/workflow-collector
+      - build
+      - checkstyle-analysis
+      - promote-to-prod:
+          type: approval
+          requires:
+            - build
+            - checkstyle-analysis
+          filters:
+            branches:
+              only: master
+      - deploy-to-prod:
+          requires:
+            - promote-to-prod
+
 jobs:
   build:
     environment:
@@ -56,21 +78,3 @@ jobs:
       - run:
           name: Deploy container to Cloud Run
           command: gcloud beta run deploy frameskip --image gcr.io/frameskip/base-image --project frameskip --platform managed --region us-east1 --allow-unauthenticated
-
-workflows:
-  version: 2
-  build-deploy:
-    jobs:
-      - build
-      - checkstyle-analysis
-      - promote-to-prod:
-          type: approval
-          requires:
-            - build
-            - checkstyle-analysis
-          filters:
-            branches:
-              only: master
-      - deploy-to-prod:
-          requires:
-            - promote-to-prod
