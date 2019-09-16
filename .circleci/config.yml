@@ -6,6 +6,7 @@ workflows:
       - build
       - checkstyle-analysis
       - promote-to-prod:
+          type: approval
           requires:
             - build
             - checkstyle-analysis
