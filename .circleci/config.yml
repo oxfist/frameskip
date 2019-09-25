@@ -5,11 +5,13 @@ workflows:
     jobs:
       - build
       - checkstyle-analysis
+      - pmd-analysis
       - promote-to-prod:
           type: approval
           requires:
             - build
             - checkstyle-analysis
+            - pmd-analysis
           filters:
             branches:
               only: master
@@ -67,6 +69,18 @@ jobs:
       - run:
           name: "Run Checkstyle"
           command: "gradle checkstyleMain checkstyleTest"
+
+  pmd-analysis:
+    environment:
+      _JAVA_OPTIONS: "-Xmx3g"
+      GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
+    docker:
+      - image: frameskip/ci-build:4.0
+    steps:
+      - checkout
+      - run:
+          name: "Run PMD"
+          command: "gradle pmdMain pmdTest"
 
   deploy-to-prod:
     docker:

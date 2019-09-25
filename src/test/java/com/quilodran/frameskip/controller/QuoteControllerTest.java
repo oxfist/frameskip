@@ -18,11 +18,12 @@ import org.springframework.test.web.servlet.MockMvc;
 class QuoteControllerTest {
 
   @Autowired
-  private MockMvc mvc;
+  private transient MockMvc mvc;
 
   @Test
   @DisplayName("GET /quote - Success")
-  void should_return_solid_snake_quote() throws Exception {
+  @SuppressWarnings("PMD.LawOfDemeter")
+  public void shouldReturnSolidSnakeQuote() throws Exception {
     mvc.perform(get("/quote"))
         .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
         .andExpect(content()

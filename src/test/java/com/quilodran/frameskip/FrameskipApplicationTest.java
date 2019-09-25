@@ -8,6 +8,7 @@ public class FrameskipApplicationTest {
 
   @Test
   public void contextLoads() {
+    // Intentionally blank
   }
 
 }

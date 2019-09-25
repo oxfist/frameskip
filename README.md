@@ -16,8 +16,8 @@ The service account configured for CI should have `Project Editor` permissions i
 - [X] Endpoint
 - [X] Deploy to GCP in pipeline
 - [X] Checkstyle
+- [X] PMD
 - [ ] CI monitoring
-- [ ] PMD
 - [ ] Snyk
 - [ ] In-memory database
 - [ ] Flyway migrations

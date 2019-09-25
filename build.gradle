@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.1.7.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'java'
+    id 'pmd'
 }
 
 apply plugin: "checkstyle"
@@ -34,4 +35,8 @@ dependencies {
 checkstyle {
     toolVersion "8.24"
     ignoreFailures false
+}
+
+pmd {
+    ruleSetFiles = files("config/pmd/frameskip_ruleset.xml")
 }
