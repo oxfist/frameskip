@@ -39,4 +39,5 @@ checkstyle {
 
 pmd {
     ruleSetFiles = files("config/pmd/frameskip_ruleset.xml")
+    consoleOutput = true
 }
